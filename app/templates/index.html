@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+{% endblock %}
+
+{% block body %}
+<h1 id="title">PaWell</h1>
+
+<div id="boundary">
+    <table>
+      <tr>
+          <td>
+            <strong>Start: </strong>
+          </td>
+          <td>
+            <input name="txtStart" id="txtStart" class="txt" />
+            <button class="editBtn" id="editBtn" onclick="changeRoute()"><i class="fa fa-edit"></i></button>
+          </td>
+      </tr>
+      <tr>
+        <td>
+            <strong>End: </strong>
+        </td>
+        <td style="width: 70%">
+            <input name="txtEnd" id="txtEnd" class="txt" />
+        </td>
+      </tr>
+        <tr>
+            <td>
+                <strong>Maximaler Umweg (in km): </strong>
+            </td>
+            <td>        
+                <input name="txtMaxUmweg" id="txtMaxUmweg" class="txt" />
+            </td>
+        </tr>
+        <tr>
+          <td>
+              <strong>Berechnungszeit: </strong>
+          </td>
+          <td>        
+            <div class="slidecontainer">
+              <input type="range" min="1" max="3" value="2" class="slider" id="slBerechnungszeit" onchange="sliderChange()">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>        
+            Berechnungszeit: <label id="lblBerechnungszeit">Mittel</label>, Ergebnis der Route: <label id="lblResult">Mittelmässig</label>
+          </td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+        </tr>    
+        <tr>
+          <td><label id="lblDurationOptimalRoute"><strong>Dauer der optimalen Route:</strong></label></td>
+          <td><label id="lblValueDurationOptimalRoute">0 Minuten</label></td>
+        </tr>
+        <tr>
+          <td><label id="lblDistanceOptimalRoute"><strong>Distanz der optimalen Route:</strong></label></td>
+          <td><label id="lblValueDistanceOptimalRoute">0 km</label></td>
+        </tr>   
+        <tr>
+          <td><label id="lblSlopeOptimalRoute"><strong>Gefälle:</strong></label></td>
+          <td><label id="lblValueSlopeOptimalRoute">0 m</label></td>
+        </tr>
+        <tr>
+          <td><label id="lblRiseOptimalRoute"><strong>Steigung:</strong></label></td>
+          <td><label id="lblValueRiseOptimalRoute">0 m</label></td>
+        </tr>      
+        <tr>
+          <td>- </td>
+          <td>- </td>
+        </tr>
+        <tr>
+          <td><label id="lblDurationNicestRoute"><strong>Dauer der schönsten Route:</strong></label></td>
+          <td><label id="lblValueDurationNicestRoute">0 Minuten</label></td>
+        </tr>
+        <tr>
+          <td><label id="lblDistanceNicestRoute"><strong>Distanz der schönsten Route:</strong></label></td>
+          <td><label id="lblValueDistanceNicestRoute">0 km</label></td>
+        </tr>
+        <tr>
+          <td><label id="lblSlopeNicestRoute"><strong>Gefälle:</strong></label></td>
+          <td><label id="lblValueSlopeNicestRoute">0 m</label></td>
+        </tr>
+        <tr>
+          <td><label id="lblRiseNicestRoute"><strong>Steigung:</strong></label></td>
+          <td><label id="lblValueRiseNicestRoute">0 m</label></td>
+        </tr>     
+    </table>
+    <div id="Buttons">
+      <button id="btnCalcFastestRoute" class="btn" onclick="initCalculationOfFastestRoute()">Schnellste Route</button>
+      <button id="btnCalcNicestRoute" class="btn" onclick="initCalculationOfNicestRoute(1)" disabled>Schönste Route</button>
+    </div>
+</div>
+
+<div id="map"></div>
+
+<div id="loadingPopup" class="loadingPopup">
+  <div class="loadingPopup-content">
+    <div class="loader"></div>
+    <div id="divLoadingScreen" >
+      <label id="lblLoadingScreen"><strong>Die Route wird generiert... 0%</strong></label>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

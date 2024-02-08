@@ -1,0 +1,226 @@
+body {
+  font-family: sans-serif;
+}
+
+#title {
+margin: auto;
+width: 50%;
+}
+
+#map {
+  height: 100%;
+  width:80%;
+  margin: auto;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 80%;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+font-family: sans-serif;
+border-collapse: collapse;
+width: 100%;
+font-style: normal;
+}
+
+td, th {
+text-align: left;
+padding: 5px;
+}
+
+#boundary {
+margin: auto;
+width: 50%;
+padding: 10px;
+}
+
+.txt {
+width: 80%;
+padding: 10px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+.btn {
+
+border: none;
+font-family: 'Lato';
+font-size: inherit;
+cursor: pointer;
+padding: 20px 100px;
+width: 45%;
+margin-top: 20px;
+margin-bottom: 20px;
+display: inline-block;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: 700;
+outline: none;
+position: relative;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+}
+
+#btnLoadGeodata {
+background-color: #3498db;
+color: #fff;
+}
+
+#btnCalcFastestRoute {
+background-color: #f54242;
+color: #fff;
+}
+
+#btnCalcNicestRoute {
+background-color: #3498db;
+color: #fff;
+margin-left: 20px;
+}
+
+#btnLoadGeodata:hover {
+  background: #3575a0;
+}
+
+#btnCalcFastestRoute:hover {
+  background: #b94141;
+}
+
+#btnCalcNicestRoute:hover {
+background: #3575a0;
+}
+
+#btnCalcNicestRoute:disabled {
+  background: #dddddd;
+  cursor: default;
+}
+
+#Buttons {
+}
+
+.loader {
+  margin: auto;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* The Modal (background) */
+.loadingPopup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.loadingPopup-content {
+  margin: 15% auto; /* 15% from the top and centered */
+  width: 100%; /* Could be more or less, depending on screen size */
+}
+
+#lblLoadingScreen {
+  font-family: 'Lato';
+  font-size: 20pt;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#divLoadingScreen {
+  margin: 15px auto;
+  text-align: center;
+}
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 60%; /* Full-width */
+  height: 20px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius:50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+#lblBerechnungszeit {
+  color: #fcba03;
+  font-weight: bold;
+}
+
+#lblResult {
+  color: #fcba03;
+  font-weight: bold;
+}
+
+.editBtn {
+  background-color: white; /* Blue background */
+  border: none; /* Remove borders */
+  color: black; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  visibility: hidden;
+}
+
+/* Darker background on mouse-over */
+.editBtn:hover {
+  color: #837d7d;
+}
